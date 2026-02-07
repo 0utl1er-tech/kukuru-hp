@@ -5,7 +5,7 @@
 <title>観光案内サイト・旅行会社向け 無料ホームページテンプレート tp_travel1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="ここにサイト説明を入れます">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
 <div class="header-inner">
 
-<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Travel Logo"></a></h1>
+<h1 id="logo"><a href="index.html"><img src="../images/logo.png" alt="Travel Logo"></a></h1>
 
 <!--開閉ブロック-->
 <div id="menubar">
@@ -37,7 +37,7 @@
 	<li><a href="destinations.html#link3">観光地メニュー3</a></li>
 	</ul>
 </li>
-<li class="current"><a href="activities.html">アクティビティ<span>Activities</span></a>
+<li><a href="activities.html">アクティビティ<span>Activities</span></a>
 	<ul>
 	<li><a href="activities_item.html">アクティビティ詳細</a></li>
 	<li><a href="activities_item.html">アクティビティ詳細</a></li>
@@ -58,53 +58,51 @@
 
 <div id="container">
 
-<div id="contents" class="bg2">
+<div id="contents">
 
 <main>
 
 <section>
 
-<h2>アクティビティ<span class="small">Activities</span></h2>
+<h2>お問い合わせ<span class="small">Contact</span></h2>
 
-<div class="list-normal">
+<!-- フォームの情報はここからです -->
+<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
+<input type="hidden" name="mode" value="form">
+<table class="ta1">
+<!-- 入力／確認 -->
+<!--<tr><th class="tamidashi" colspan="2">お問い合わせフォーム</th></tr>-->
+<tr>
+<th width="150">お名前<span style="color:red">※</span></th>
+<td>
+<input name="item1" value="<?php echo $form["item1"];?>" type="text" size="40" maxlength="500" class="ws">
+<?php if ($msg["item1"]) echo '<div style="color:red">' . $msg["item1"] . '</div>'; ?>
+</td>
+</tr>
+<tr>
+<th width="150">メールアドレス<span style="color:red">※</span></th>
+<td>
+<input name="item2" value="<?php echo $form["item2"];?>" type="text" size="40" maxlength="500" class="ws">
+<?php if ($msg["item2"]) echo '<div style="color:red">' . $msg["item2"] . '</div>'; ?>
+</td>
+</tr>
+<tr>
+<th>お問い合わせ内容<span style="color:red">※</span></th>
+<td>
+<textarea name="item3" cols="40" rows="10" class="wl"><?php echo $form["item3"]; ?></textarea>
+<?php if ($msg["item3"]) echo '<div style="color:red">' . $msg["item3"] . '</div>'; ?>
+</td>
+</tr>
+</table>
 
-<div class="list blur">
-<figure class="image"><a href="activities_item.html"><img src="images/1.jpg" alt=""></a></figure>
-<div class="text">
-<h4><a href="activities_item.html">アクティビティスポット</a></h4>
-<p>アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。</p>
-</div>
-</div>
+<p class="c">
+<input type="submit" value="内容を確認する">
+&nbsp;
+<input type="reset" value="リセット">
+</p>
 
-<div class="list blur">
-<figure class="image"><a href="activities_item.html"><img src="images/1.jpg" alt=""></a></figure>
-<div class="text">
-<h4><a href="activities_item.html">アクティビティスポット</a></h4>
-<p>アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。</p>
-</div>
-</div>
-
-<div class="list blur">
-<figure class="image"><a href="activities_item.html"><img src="images/1.jpg" alt=""></a></figure>
-<div class="text">
-<h4><a href="activities_item.html">アクティビティスポット</a></h4>
-<p>アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。</p>
-</div>
-</div>
-
-<div class="list blur reverse">
-<figure class="image"><a href="activities_item.html"><img src="images/1.jpg" alt=""></a></figure>
-<div class="text">
-<h4><a href="activities_item.html">アクティビティスポット</a></h4>
-<p>アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。アクティビティスポットの説明を入れます。サンプルテキスト。</p>
-<p><span class="look">&lt;div class=&quot;list blur&quot;&gt;</span><br>
-を、<br>
-<span class="look">&lt;div class=&quot;list blur <span class="color-check">reverse&quot;</span>&gt;</span><br>
-にすると左右が反転します。お好みで使い分けて下さい。</p>
-</div>
-</div>
-
-</div>
+</form>
+<!-- フォームの情報はここまでです -->
 
 </section>
 
@@ -121,8 +119,8 @@
 <div class="left">
 
 <h3>Travel Logo</h3>
-<p>〒906-0303 沖縄県宮古島市下地洲鎌５７９−６<br>
-代表電話：0980-79-0606<br>
+<p>〒869-1101 熊本県菊池郡菊陽町（熊本空港周辺）<br>
+代表電話：096-XX-XXXX<br>
 受付時間：月曜日から金曜日の8時から18時まで</p>
 
 <ul class="icons">
@@ -201,14 +199,14 @@
 
 <!--スライドショー（slick）-->
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="js/slick.js"></script>
+<script src="../js/slick.js"></script>
 
 <!--パララックス（inview）-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-<script src="js/jquery.inview_set.js"></script>
+<script src="../js/jquery.inview_set.js"></script>
 
 <!--このテンプレート専用のスクリプト-->
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 
 </body>
 </html>
